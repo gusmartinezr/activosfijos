@@ -15,10 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-// Route::redirect('/', '/activos');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::redirect('/', '/activos');
 Route::prefix('activos')->group(function () {
     Route::get('/', [ActivoController::class, 'index'])->name('activos.index');
     Route::get('/create', [ActivoController::class, 'create'])->name('activos.create');
